@@ -1,0 +1,41 @@
+# --- JAVA / SPRING BOOT (Backend) ---
+**/target/
+**/.mvn/wrapper/maven-wrapper.jar
+**/.sts4-cache
+**/.apt_generated
+**/.classpath
+**/.factorypath
+**/.project
+**/.settings
+**/.springBeans
+
+# --- NODE / REACT / TAILWIND (Frontend) ---
+**/node_modules/
+**/dist/
+**/dist-ssr
+**/.eslintcache
+**/.stylelintcache
+**/build/
+**.local
+
+# --- LOGS & DEBUG ---
+**/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- EDITORS & SYSTEM ---
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.iws
+*.iml
+*.ipr
+.DS_Store
+Thumbs.db
+*.sw?
+
+# --- SEGURIDAD ---
+.env
+.env.local

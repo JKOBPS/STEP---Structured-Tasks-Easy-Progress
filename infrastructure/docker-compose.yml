@@ -1,0 +1,15 @@
+services:
+  db:
+    image: mysql:8.0
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    container_name: step_mysql_container
+    environment:
+      MYSQL_DATABASE: ${DB_NAME:-step_app_db}
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
+    volumes:
+      - step_db_data:/var/lib/mysql
+      - ./database/01-init-data.sql:/docker-entrypoint-initdb.d/01-init-data.sql
+volumes:
+  step_db_data:
