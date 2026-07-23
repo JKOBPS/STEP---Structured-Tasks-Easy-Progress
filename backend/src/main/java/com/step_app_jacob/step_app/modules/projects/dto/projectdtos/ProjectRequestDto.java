@@ -26,6 +26,10 @@ public class ProjectRequestDto {
     @NotBlank(message = "La descripción no puede estar vacía")
     private String description;
 
+    @Builder.Default
     private Set<Long> members = new HashSet<>();
+
+    @Builder.Default
     private List<Long> columns = new ArrayList<>();
+
 }

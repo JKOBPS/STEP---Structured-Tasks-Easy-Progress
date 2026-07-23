@@ -2,8 +2,6 @@ package com.step_app_jacob.step_app.modules.tasks.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.graphql.GraphQlProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -31,8 +29,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequestMapping("/tasks")
 public class TaskController {
 
-    @Autowired
-    private TaskService taskService;
+    private final TaskService taskService;
+
+    TaskController(TaskService taskService) {
+        this.taskService = taskService;
+    }
 
     //READ
     @GetMapping("/search")

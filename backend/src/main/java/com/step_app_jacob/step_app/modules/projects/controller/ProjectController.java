@@ -2,11 +2,9 @@ package com.step_app_jacob.step_app.modules.projects.controller;
 
 
 import com.step_app_jacob.step_app.modules.membership.dto.ProjectMembershipResponseDTO;
-import com.step_app_jacob.step_app.modules.membership.dto.ProjectMembershipMapper;
 import com.step_app_jacob.step_app.modules.membership.repository.ProjectMembershipRepository;
 
 import com.step_app_jacob.step_app.modules.membership.service.MembershipService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort.Direction;
@@ -31,13 +29,16 @@ import java.util.List;
 @RequestMapping("/projects")
 public class ProjectController {
 
-    @Autowired
-    ProjectService projectService;
+    final ProjectService projectService;
 
-    @Autowired
-    ProjectMembershipRepository projectMembershipRepository;
-    @Autowired
-    MembershipService membershipService;
+    final ProjectMembershipRepository projectMembershipRepository;
+    final MembershipService membershipService;
+
+    ProjectController(ProjectService projectService, MembershipService membershipService, ProjectMembershipRepository projectMembershipRepository) {
+        this.projectService = projectService;
+        this.projectMembershipRepository = projectMembershipRepository;
+        this.membershipService = membershipService;
+    }
 
     //READ---------------------
     @GetMapping("/search")

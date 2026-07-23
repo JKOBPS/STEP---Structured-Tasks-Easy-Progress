@@ -3,7 +3,6 @@ package com.step_app_jacob.step_app.modules.columns.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
@@ -22,10 +21,13 @@ import com.step_app_jacob.step_app.modules.projects.repository.ProjectRepository
 @Service
 public class ColumnService {
 
-    @Autowired
-    private ColumnRepository columnRepository;
-    @Autowired
-    private ProjectRepository projectRepository;
+    private final ColumnRepository columnRepository;
+    private final ProjectRepository projectRepository;
+
+    ColumnService(ColumnRepository columnRepository, ProjectRepository projectRepository) {
+        this.columnRepository = columnRepository;
+        this.projectRepository = projectRepository;
+    }
 
     //READ---------------
     @Transactional(readOnly = true) //getAll

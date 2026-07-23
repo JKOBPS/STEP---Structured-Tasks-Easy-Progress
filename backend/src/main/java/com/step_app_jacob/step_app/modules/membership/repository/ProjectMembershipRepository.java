@@ -5,14 +5,12 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.Query;
 
 
 import com.step_app_jacob.step_app.modules.membership.entity.ProjectMembership;
 import com.step_app_jacob.step_app.modules.membership.entity.ProjectMembershipId;
 
-@Repository
 public interface ProjectMembershipRepository extends JpaRepository<ProjectMembership, ProjectMembershipId> {
 
     Optional<ProjectMembership> findByUserId(Long userId);

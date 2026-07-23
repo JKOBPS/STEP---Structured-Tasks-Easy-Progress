@@ -6,7 +6,6 @@ import com.step_app_jacob.step_app.modules.users.entity.User;
 import com.step_app_jacob.step_app.modules.users.repository.UserRepository;
 import com.step_app_jacob.step_app.modules.users.service.UserService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -26,20 +25,23 @@ import com.step_app_jacob.step_app.security.service.CustomUserDetailsService;
 @RequestMapping("/auth")
 public class AuthController {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
+    private final AuthenticationManager authenticationManager;
 
-    @Autowired
-    private CustomUserDetailsService userDetailsService;
+    private final CustomUserDetailsService userDetailsService;
 
-    @Autowired
-    private JwtService jwtService;
+    private final JwtService jwtService;
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
+
+    AuthController(UserRepository userRepository, AuthenticationManager authenticationManager, CustomUserDetailsService userDetailsService, JwtService jwtService, UserService userService) {
+        this.userRepository = userRepository;
+        this.authenticationManager = authenticationManager;
+        this.userDetailsService = userDetailsService;
+        this.jwtService = jwtService;
+        this.userService = userService;
+    }
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponseDto> login(@RequestBody LoginRequestDto request) {

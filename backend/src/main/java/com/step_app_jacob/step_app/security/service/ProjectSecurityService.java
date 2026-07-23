@@ -2,7 +2,6 @@ package com.step_app_jacob.step_app.security.service;
 
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -19,16 +18,20 @@ import com.step_app_jacob.step_app.modules.users.repository.UserRepository;
 @Service("projectSecurity")
 public class ProjectSecurityService {
 
-    @Autowired
-    private ProjectMembershipRepository projectMembershipRepository;
+    private final ProjectMembershipRepository projectMembershipRepository;
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    @Autowired
-    private ColumnRepository columnRepository;
+    private final ColumnRepository columnRepository;
 
-    @Autowired TaskRepository taskRepository;
+    final TaskRepository taskRepository;
+
+    ProjectSecurityService(ProjectMembershipRepository projectMembershipRepository, ColumnRepository columnRepository, TaskRepository taskRepository, UserRepository userRepository) {
+        this.projectMembershipRepository = projectMembershipRepository;
+        this.userRepository = userRepository;
+        this.columnRepository = columnRepository;
+        this.taskRepository = taskRepository;
+    }
 
     //Comprueba si el rol del usuario, coincide con el rol esperado, en el proyecto pasado por parámetro
     public boolean hasProjectPermission(String userName, Long projectId, ProjectRoles requiredRole) {

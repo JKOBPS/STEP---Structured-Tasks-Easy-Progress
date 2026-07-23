@@ -6,7 +6,6 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -26,14 +25,17 @@ import com.step_app_jacob.step_app.modules.users.repository.UserRepository;
 @Service
 public class UserService {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    @Autowired
-    private ProjectMembershipRepository projectMembershipService;
+    private final ProjectMembershipRepository projectMembershipService;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
+
+    UserService(UserRepository userRepository, ProjectMembershipRepository projectMembershipService, PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.projectMembershipService = projectMembershipService;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     //READS
     @Transactional(readOnly = true)

@@ -2,7 +2,6 @@ package com.step_app_jacob.step_app.modules.tasks.repository;
 
 import java.util.List;
 
-import com.step_app_jacob.step_app.modules.columns.entity.ColumnEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

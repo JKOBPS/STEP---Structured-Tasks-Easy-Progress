@@ -1,5 +1,4 @@
 package com.step_app_jacob.step_app.security.config;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -32,14 +31,17 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin("")
 public class SecurityConfig {
     
-    @Autowired
-    CustomUserDetailsService customUserDetailsService;
+    final CustomUserDetailsService customUserDetailsService;
 
-    @Autowired
-    JwtAuthenticationFilter jwtAuthFilter;
+    final JwtAuthenticationFilter jwtAuthFilter;
 
-    @Autowired
-    UserRepository userRepository;
+    final UserRepository userRepository;
+
+    SecurityConfig(CustomUserDetailsService customUserDetailsService, JwtAuthenticationFilter jwtAuthFilter, UserRepository userRepository) {
+        this.customUserDetailsService = customUserDetailsService;
+        this.jwtAuthFilter = jwtAuthFilter;
+        this.userRepository = userRepository;
+    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {

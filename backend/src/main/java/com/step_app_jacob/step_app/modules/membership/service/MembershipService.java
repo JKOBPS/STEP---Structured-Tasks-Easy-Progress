@@ -3,7 +3,6 @@ package com.step_app_jacob.step_app.modules.membership.service;
 import com.step_app_jacob.step_app.modules.membership.dto.ProjectMembershipResponseDTO;
 import com.step_app_jacob.step_app.modules.membership.entity.ProjectMembership;
 import com.step_app_jacob.step_app.modules.membership.repository.ProjectMembershipRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,8 +11,11 @@ import java.util.stream.Collectors;
 @Service
 public class MembershipService {
 
-    @Autowired
-    ProjectMembershipRepository membershipRepository;
+    final ProjectMembershipRepository membershipRepository;
+
+    MembershipService(ProjectMembershipRepository membershipRepository) {
+        this.membershipRepository = membershipRepository;
+    }
 
     public List<ProjectMembershipResponseDTO> getProjectMembers(Long projectId) {
 

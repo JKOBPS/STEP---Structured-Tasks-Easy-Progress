@@ -3,7 +3,6 @@ package com.step_app_jacob.step_app.modules.tasks.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,14 +26,17 @@ import com.step_app_jacob.step_app.modules.users.repository.UserRepository;
 @Service
 public class TaskService {
 
-    @Autowired
-    private TaskRepository taskRepository;
-    @Autowired
-    private ColumnRepository columnRepository;
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private ProjectMembershipRepository projectMembershipRepository;
+    private final TaskRepository taskRepository;
+    private final ColumnRepository columnRepository;
+    private final UserRepository userRepository;
+    private final ProjectMembershipRepository projectMembershipRepository;
+
+    TaskService(TaskRepository taskRepository, ProjectMembershipRepository projectMembershipRepository, UserRepository userRepository, ColumnRepository columnRepository) {
+        this.taskRepository = taskRepository;
+        this.columnRepository = columnRepository;
+        this.projectMembershipRepository = projectMembershipRepository;
+        this.userRepository = userRepository;
+    }
 
     //READ
     @Transactional(readOnly = true)

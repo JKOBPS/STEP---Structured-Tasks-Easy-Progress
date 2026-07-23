@@ -5,7 +5,6 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -33,12 +32,15 @@ import com.step_app_jacob.step_app.security.entity.CustomUserDetails;
 @Service
 public class ProjectService {
 
-    @Autowired
-    ProjectRepository projectRepository;
-    @Autowired
-    UserRepository userRepository;
-    @Autowired
-    ProjectMembershipRepository projectMembershipRepository;
+    final ProjectRepository projectRepository;
+    final UserRepository userRepository;
+    final ProjectMembershipRepository projectMembershipRepository;
+
+    ProjectService(UserRepository userRepository, ProjectRepository projectRepository, ProjectMembershipRepository projectMembershipRepository) {
+        this.userRepository = userRepository;
+        this.projectRepository = projectRepository;
+        this.projectMembershipRepository = projectMembershipRepository;
+    }
 
     //READ------------------LA MAYORÍA DE READS, TE ENCONTRARÁ SOLO LOS PROYECTOS EN LOS QUE USER ES MIEMBRO!
 
