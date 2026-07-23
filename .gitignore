@@ -39,3 +39,6 @@ Thumbs.db
 # --- SEGURIDAD ---
 .env
 .env.local
+
+# --- CONFIGURACIONES locales SpringBoot ---
+application-dev.properties
