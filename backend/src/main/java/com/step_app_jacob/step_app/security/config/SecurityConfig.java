@@ -90,7 +90,7 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         //Cors permite acceso a las siguientes rutas
-        configuration.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:4173"));
+        configuration.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:4173", "https://step-structured-tasks-easy-progress.vercel.app"));
 
         //Métodos que puede usar
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE","PATCH", "OPTIONS"));
