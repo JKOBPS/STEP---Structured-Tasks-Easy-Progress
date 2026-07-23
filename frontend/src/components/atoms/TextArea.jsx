@@ -1,4 +1,4 @@
-export const Textarea = ({
+export const TextArea = ({
   label,
   value,
   onChange,
