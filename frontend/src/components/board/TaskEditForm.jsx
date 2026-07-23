@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Input } from "../atoms/Input";
-import { Textarea } from "../atoms/TextArea";
+import { TextArea } from "../atoms/TextArea";
 import { Select } from "../atoms/Select";
 import { Button } from "../atoms/Button";
 import { createTask, updateTask } from "../../services/taskAPI";
