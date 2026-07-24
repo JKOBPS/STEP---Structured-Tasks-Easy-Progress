@@ -1,4 +1,10 @@
-# STEP - Structured Tasks, Easy Progress 🚀
+# STEP - Structured Tasks, Easy Progress
+
+DISCLAIMER!: 
+* En estas primeras versiones, servidor tarda 50 segundos en encenderse por primera vez, esto es debido a que el proyecto usa un plan gratuito en la nube.
+
+Link para probar la Web:
+https://step-structured-tasks-easy-progress.vercel.app/
 
 > "Tareas estructuradas, fácil progreso"
 
@@ -6,9 +12,9 @@
 
 ---
 
-## 📌 Estado del Proyecto: **Backend en Desarrollo** 🛠️
+## 📌 Estado del Proyecto:
 
-Actualmente, el repositorio contiene el **Core del Backend**. El desarrollo del Frontend (React) comenzará próximamente. Este proyecto integra las competencias técnicas adquiridas durante el ciclo de **Desarrollo de Aplicaciones Web (DAW)**.
+Actualmente el proyecto está en una versión inicial (PRE-ALPHA). La aplicación cumple con la funcionalidad que se desarrolla en la descripción, aunque esta versión es muy básica por ahora, se irá actualizando a lo largo del tiempo para mejorar sus funcionalidades, apariencia y accesibilidad entre otras.
 
 ---
 
@@ -26,13 +32,13 @@ Actualmente, el repositorio contiene el **Core del Backend**. El desarrollo del 
 
 ### Backend & Base de Datos
 
-- **Lenguaje:** Java 17
-- **Framework:** Spring Boot 3.x (Spring Security, Data JPA, Hibernate)
+- **Lenguaje:** Java 21
+- **Framework:** Spring Boot 3.5.x (Spring Security, Data JPA, Hibernate)
 - **Base de Datos:** MySQL 8.0
 - **Seguridad:** JSON Web Tokens (JWT)
 
 ### Herramientas & DevOps
-
+- **Despliegue en la nube:** Vercel, Aiven y Render
 - **Contenerización:** Docker & Docker Compose
 - **Gestión de Dependencias:** Maven
 - **API Testing:** Postman
@@ -40,7 +46,7 @@ Actualmente, el repositorio contiene el **Core del Backend**. El desarrollo del 
 
 ---
 
-## ⚙️ Instalación y Ejecución 🚀
+## ⚙️ Instalación y Ejecución en local
 
 El proyecto está diseñado con una filosofía **"Zero-Config"** para entornos locales, permitiendo levantar la infraestructura rápidamente mediante Docker.
 
@@ -66,7 +72,7 @@ DB_PASSWORD=tu_password
 JWT_SECRET_KEY=tu_clave_secreta_en_base64_aqui
 ```
 
-### 3. Levantar la Infraestructura (Docker) 🐳
+### 3. Levantar la Infraestructura (Docker)
 
 Desde la raíz del proyecto, ejecuta el siguiente comando para iniciar el contenedor de MySQL:
 
@@ -98,13 +104,14 @@ El proyecto aplica patrones de diseño avanzados para garantizar la escalabilida
 - **Gestión de Secretos:** Uso de la anotación `@Value` e inyección de dependencias para desacoplar claves críticas (JWT, DB) del código fuente, permitiendo configuraciones dinámicas mediante variables de entorno.
 - **Manejo de Carga Perezosa (Lazy Loading):** Uso estratégico de `JOIN FETCH` y consultas personalizadas para mitigar el problema de las N+1 consultas en Hibernate.
 - **Validación de Datos:** Integración de `Jakarta Bean Validation` para asegurar la integridad de los datos de entrada antes de su procesamiento.
-
+- **Diseño y patrones, separación en componentes/módulos** Modularización del Frontend en base a componentes, hooks, llamadas a la API y sus consumiciones correspondientes + Tráfico del JWT. 
 ---
 
-## 📊 Modelo de Datos (E-R)
+## 📊 Modelo de Datos - MySQL - Relational Data Bases
 
 La base de datos está normalizada y diseñada para la colaboración eficiente:
 
+*Básicos*:
 - **Users:** Gestión de credenciales y roles globales de sistema (`ADMIN`, `USER`).
 - **Projects:** Cabecera de proyectos vinculada a un dueño (`Owner`).
 - **Columns:** Secciones lógicas dentro de un proyecto que agrupan tareas por estado o categoría.
@@ -115,4 +122,4 @@ La base de datos está normalizada y diseñada para la colaboración eficiente:
 
 ## 👤 Autor
 
-**Jacob Parra Silva** Estudiante de Desarrollo de Aplicaciones Web (DAW) | [LinkedIn](https://www.linkedin.com/in/jacob-parra-silva-66670b164/) | [GitHub](https://github.com/JKOBPS)
+**Jacob Parra Silva** - Técnido Profesional - Desarrollo de Aplicaciones Web (DAW) | [LinkedIn](https://www.linkedin.com/in/jacob-parra-silva-66670b164/) | [GitHub](https://github.com/JKOBPS)
