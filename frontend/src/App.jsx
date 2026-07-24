@@ -13,7 +13,6 @@ function App() {
     <Routes>
       {/*RUTAS PÚBLICAS (Sin restricciones)*/}
       <Route path="/" element={<Navigate to="/landing" replace />} />
-      <Route path="/landing" element={<Navigate to="/landing" replace />} />
       <Route path="/landing" element={<LandingPage />} />
 
       {/*RUTAS PRIVADAS (Protegidas)*/}
