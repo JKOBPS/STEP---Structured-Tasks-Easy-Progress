@@ -1,4 +1,5 @@
 import { TaskCard } from "./TaskCard";
+import { DeleteIcon, EditIcon } from "../../components/atoms/svg/Icons";
 
 export const BoardColumn = ({
   column,
@@ -16,7 +17,7 @@ export const BoardColumn = ({
         <h3 className="font-semibold text-slate-700">{column.name}</h3>
 
         <div className="flex items-center gap-2">
-          <div className="flex opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+          <div className="flex ">
             {canEdit && (
               <>
                 <button
@@ -24,14 +25,14 @@ export const BoardColumn = ({
                   className="cursor-pointer rounded p-1 text-slate-400 hover:bg-blue-50 hover:text-blue-600"
                   title="Editar columna"
                 >
-                  ✏️
+                  <EditIcon className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => onDelete(column)}
                   className="cursor-pointer rounded p-1 text-slate-400 hover:bg-red-50 hover:text-red-600"
                   title="Borrar columna"
                 >
-                  🗑️
+                  <DeleteIcon className="w-4 h-4" />
                 </button>
               </>
             )}

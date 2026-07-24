@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { EditIcon, DeleteIcon } from "../atoms/svg/Icons";
+import { UsersIcon } from "../atoms/svg/Icons";
 
 const ROLE_COLORS = {
   OWNER: "bg-amber-100 text-amber-800 border border-amber-200",
@@ -35,20 +37,20 @@ export const ProjectCard = ({ project, onEdit, onDelete }) => {
             </span>
 
             {isOwner && (
-              <div className="absolute right-0 flex gap-1 opacity-0 transition-opacity duration-200 group-hover:opacity-100 bg-white pl-2">
+              <div className="absolute right-0 flex gap-1 bg-white pl-2">
                 <button
                   onClick={() => onEdit(project)}
                   className="cursor-pointer rounded p-1 text-slate-400 transition-colors hover:bg-blue-50 hover:text-blue-600"
                   title="Editar proyecto"
                 >
-                  ✏️
+                  <EditIcon className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => onDelete(project)}
                   className="cursor-pointer rounded p-1 text-slate-400 transition-colors hover:bg-red-50 hover:text-red-600"
                   title="Borrar proyecto"
                 >
-                  🗑️
+                  <DeleteIcon className="w-4 h-4" />
                 </button>
               </div>
             )}
@@ -66,7 +68,9 @@ export const ProjectCard = ({ project, onEdit, onDelete }) => {
 
       <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4 text-sm text-slate-500">
         <div className="flex items-center gap-1.5 font-medium">
-          <span>👥</span>
+          <span>
+            <UsersIcon className="w-4 h-4" />
+          </span>
           <span>
             {totalMembers} {totalMembers === 1 ? "miembro" : "miembros"}
           </span>
