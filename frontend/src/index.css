@@ -1,1 +1,26 @@
+/* src/index.css */
 @import "tailwindcss";
+
+/* 1. Clases CSS tradicionales (Infalibles en cualquier versión) */
+.floating-slow {
+  animation: float 5s ease-in-out infinite;
+}
+
+.floating-medium {
+  animation: float 4s ease-in-out 1.5s infinite;
+}
+
+.floating-fast {
+  animation: float 3.5s ease-in-out 3s infinite;
+}
+
+/* 2. Definición del movimiento */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}

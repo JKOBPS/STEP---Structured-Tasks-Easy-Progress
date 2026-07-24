@@ -16,7 +16,7 @@ export const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("jwt_token");
     localStorage.removeItem("user_name");
-    navigate("/login");
+    navigate("/landing");
   };
 
   return (

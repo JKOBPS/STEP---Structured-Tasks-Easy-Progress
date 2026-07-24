@@ -10,7 +10,7 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="bg-slate-0 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] text-shadow-slate-950 py-3 px-4 mt-auto">
+    <footer className="bg-slate-0 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] text-shadow-slate-950 py-3 px-4 mt-auto w-screen">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-2">
           {/* Nombre y descripción */}

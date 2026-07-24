@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Modal } from "../shared/Modal";
+import { Modal } from "../../components/shared/Modal";
 import { TaskReadOnlyView } from "./TaskReadOnlyView";
 import { TaskEditForm } from "./TaskEditForm";
 

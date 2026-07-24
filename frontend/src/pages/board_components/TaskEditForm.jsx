@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Input } from "../atoms/Input";
-import { Textarea } from "../atoms/TextArea";
-import { Select } from "../atoms/Select";
-import { Button } from "../atoms/Button";
+import { Input } from "../../components/atoms/Input";
+import { Textarea } from "../../components/atoms/TextArea";
+import { Select } from "../../components/atoms/Select";
+import { Button } from "../../components/atoms/Button";
 import { createTask, updateTask } from "../../services/taskAPI";
 
 export const TaskEditForm = ({

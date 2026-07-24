@@ -7,17 +7,17 @@ import {
   updateMemberRole,
   removeProjectMember,
 } from "../services/membershipAPI";
-import { AddMemberModal } from "../components/board/AddMemberModal";
+import { AddMemberModal } from "./board_components/AddMemberModal";
 import { getProjectById, updateProject } from "../services/projectAPI";
-import { BoardColumn } from "../components/board/BoardColumn";
+import { BoardColumn } from "./board_components/BoardColumn";
 import { Button } from "../components/atoms/Button";
 import { useAuth } from "../hooks/useAuth";
-import { MembersSidebar } from "../components/board/MembersSidebar";
-import { EditMemberRoleModal } from "../components/board/EditMemberRoleModal";
+import { MembersSidebar } from "./board_components/MembersSidebar";
+import { EditMemberRoleModal } from "./board_components/EditMemberRoleModal";
 
-import { ColumnFormModal } from "../components/board/ColumnFormModal";
+import { ColumnFormModal } from "./board_components/ColumnFormModal";
 import { ConfirmModal } from "../components/shared/ConfirmModal";
-import { TaskFormModal } from "../components/board/TaskFormModal";
+import { TaskFormModal } from "./board_components/TaskFormModal";
 
 export const BoardPage = () => {
   //Constantes/parámetros

@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { Modal } from "../shared/Modal";
-import { Select } from "../atoms/Select";
-import { Button } from "../atoms/Button";
-
+import { Modal } from "../../components/shared/Modal";
+import { Select } from "../../components/atoms/Select";
+import { Button } from "../../components/atoms/Button";
 export const EditMemberRoleModal = ({
   isOpen,
   onClose,

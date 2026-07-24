@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { Modal } from "../shared/Modal";
-import { Input } from "../atoms/Input";
-import { Button } from "../atoms/Button";
+import { Modal } from "../../components/shared/Modal";
+import { Input } from "../../components/atoms/Input";
+import { Button } from "../../components/atoms/Button";
 import { createColumn, updateColumn } from "../../services/columnAPI";
 
 export const ColumnFormModal = ({

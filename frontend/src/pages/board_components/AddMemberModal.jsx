@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Modal } from "../shared/Modal";
-import { Button } from "../atoms/Button";
+import { Modal } from "../../components/shared/Modal";
+import { Button } from "../../components/atoms/Button";
 import { searchUsersByName } from "../../services/userAPI";
 
 export const AddMemberModal = ({
