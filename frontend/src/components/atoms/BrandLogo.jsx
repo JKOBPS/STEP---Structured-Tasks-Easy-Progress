@@ -10,7 +10,7 @@ export const BrandLogo = ({ className = "" }) => {
         src="/step-favicon.svg"
         alt="StepApp Logo"
         to="/dashboard"
-        className="h-8 w-8 transition-transform hover:scale-105 cursor-pointer"
+        className="h-8 w-8"
       />
 
       {/*nombre de tu aplicación */}
